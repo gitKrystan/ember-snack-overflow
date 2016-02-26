@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'form',
-  classNames: ['form-horizontal', 'so-form'],
+  classNames: ['form-horizontal'],
   questionFormIsVisible: false,
   warnNeedsAuthor: false,
   warnNeedsContent: false,
