@@ -23,15 +23,21 @@
 
   <!-- SUBMIT/CANCEL BUTTONS -->
   <div class="form-group">
-    <div class="col-sm-2">
-      <button {{action 'hideAnswerForm'}} class="btn btn-default">Nevermind</button>
-    </div>
-    <div class="col-sm-10">
-      <button {{action 'saveAnswer'}} class="btn btn-primary btn-block">Submit Answer</button>
+    <div class="col-sm-10 col-sm-offset-2">
+      <div class="row">
+        <div class="col-sm-3">
+          <button {{action 'hideAnswerForm'}} class="btn btn-default btn-block">Nevermind</button>
+        </div>
+        <div class="col-sm-9">
+          <button {{action 'saveAnswer'}} class="btn btn-primary btn-block">Submit Answer</button>
+        </div>
+      </div>
     </div>
   </div>
 {{else}}
-  <div class="col-sm-10 col-sm-offset-2 so-show-button">
-    <button {{action 'showAnswerForm'}} class="btn btn-default">Answer this Question</button>
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-2 so-show-button">
+      <button {{action 'showAnswerForm'}} class="btn btn-default">Answer this Question</button>
+    </div>
   </div>
 {{/if}}
