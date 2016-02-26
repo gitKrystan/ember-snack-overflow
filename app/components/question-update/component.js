@@ -7,16 +7,13 @@ export default Ember.Component.extend({
   warnNeedsContent: false,
   stopSubmit: false,
   actions: {
-    saveQuestion() {
-      var inputAuthor = this.get('author');
-      var inputContent = this.get('content');
-
-      if (!inputAuthor) {
+    updateQuestion(question) {
+      if (question.get('author') === '') {
         this.set('warnNeedsAuthor', true);
         this.set('stopSubmit', true);
       }
 
-      if (!inputContent) {
+      if (question.get('content') === '') {
         this.set('warnNeedsContent', true);
         this.set('stopSubmit', true);
       }
@@ -25,10 +22,10 @@ export default Ember.Component.extend({
         return this.set('stopSubmit', false);
       } else {
         var params = {
-          author: inputAuthor,
-          content: inputContent,
+          author: this.get('author'),
+          content: this.get('content'),
           notes: this.get('notes') || '',
-          dateCreated: new Date().getTime(),
+          dateCreated: this.get('dateCreated'),
           dateUpdated: new Date().getTime()
         };
 
@@ -36,7 +33,7 @@ export default Ember.Component.extend({
         this.set('content', '');
         this.set('notes', '');
 
-        this.sendAction('saveQuestion', params);
+        this.sendAction('updateQuestion', params, question);
       }
     }
   }
