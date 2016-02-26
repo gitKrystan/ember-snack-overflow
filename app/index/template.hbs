@@ -1,5 +1,7 @@
 {{question-form saveQuestion='saveQuestion'}}
 
 {{#each model as |question|}}
-  {{question-tile question=question}}
+  {{#link-to 'question' question.id}}
+    {{question-tile question=question}}
+  {{/link-to}}
 {{/each}}
