@@ -18,7 +18,12 @@
 <div class="form-group">
   <label for="content" class="col-sm-2 control-label">Question*</label>
   <div class="col-sm-10">
-    {{input value=content class="form-control" placeholder="Can you state your question briefly?"}}
+    {{#if question}}
+      {{input value=question.content class="form-control" placeholder="Can you state your question briefly?"}}
+    {{else}}
+      {{input value=content class="form-control" placeholder="Can you state your question briefly?"}}
+    {{/if}}
+
     {{#if warnNeedsContent}}
       <span id="helpBlock" class="help-block">Please add a question.</span>
     {{/if}}
@@ -29,7 +34,11 @@
 <div class="form-group">
   <label for="notes" class="col-sm-2 control-label">Description</label>
   <div class="col-sm-10">
-    {{textarea value=notes class="form-control" rows="6" placeholder="Describe your question in depth here..."}}
+    {{#if question}}
+      {{textarea value=question.notes class="form-control" rows="6" placeholder="Describe your question in depth here..."}}
+    {{else}}
+      {{textarea value=notes class="form-control" rows="6" placeholder="Describe your question in depth here..."}}
+    {{/if}}
   </div>
 </div>
 
