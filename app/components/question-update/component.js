@@ -49,6 +49,10 @@ export default Ember.Component.extend({
         this.sendAction('updateQuestion', params, question);
         this.hideQuestionForm();
       }
+    },
+
+    deleteQuestion(question) {
+      this.sendAction('deleteQuestion', question);
     }
   }
 });
