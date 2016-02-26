@@ -3,7 +3,6 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'snack-overflow',
-    podModulePrefix: 'demo/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
