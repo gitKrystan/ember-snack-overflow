@@ -13,9 +13,13 @@ export default Ember.Route.extend({
     saveQuestion(params) {
       var route = this;
       var newQuestion = this.store.createRecord('question', params);
-      newQuestion.save().then(function() {
+      newQuestion.save()
+      .then(function() {
         route.refresh();
-      });
+      }).catch(e => {
+          console.log(e.errors);
+        }
+      );
     }
   }
 });

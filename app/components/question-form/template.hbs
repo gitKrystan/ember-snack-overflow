@@ -3,8 +3,10 @@
   <label for="author" class="col-sm-2 control-label">Author*</label>
   <div class="col-sm-10">
     {{#if question}}
+      {{log question}}
       {{input value=question.author class="form-control" placeholder="Your Name"}}
     {{else}}
+      {{log 'no question'}}
       {{input value=author class="form-control" placeholder="Your Name"}}
     {{/if}}
 
