@@ -7,14 +7,21 @@ export default Ember.Route.extend({
 
   actions: {
     saveAnswer(params) {
-      // var route = this;
       var question = params.question;
       var newAnswer = this.store.createRecord('answer', params);
       question.get('answers').addObject(newAnswer);
       newAnswer.save().then(function() {
         return question.save();
-        // route.refresh();
       });
+    },
+
+    updateQuestion(params, question) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          question.set(key,params[key]);
+        }
+      });
+      question.save();
     }
   }
 });

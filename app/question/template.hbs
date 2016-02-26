@@ -1,7 +1,14 @@
+<!-- QUESTION -->
 {{question-tile question=model}}
 
+<!-- UPDATE QUESTION -->
+<h5>Update the Question</h5>
+{{question-form question=model updateQuestion='updateQuestion'}}
+
+<!-- NEW ANSWER -->
 {{answer-form question=model saveAnswer='saveAnswer'}}
 
+<!-- ALL ANSWERS -->
 {{#each model.answers as |answer|}}
   {{answer-tile answer=answer}}
 {{/each}}

@@ -2,7 +2,12 @@
 <div class="form-group">
   <label for="author" class="col-sm-2 control-label">Author*</label>
   <div class="col-sm-10">
-    {{input value=author class="form-control" placeholder="Your Name"}}
+    {{#if question}}
+      {{input value=question.author class="form-control" placeholder="Your Name"}}
+    {{else}}
+      {{input value=author class="form-control" placeholder="Your Name"}}
+    {{/if}}
+
     {{#if warnNeedsAuthor}}
       <span id="helpBlock" class="help-block">Please add author name.</span>
     {{/if}}
@@ -31,6 +36,10 @@
 <!-- SUBMIT BUTTON -->
 <div class="form-group">
   <div class="col-sm-10 col-sm-offset-2">
-    <button {{action 'saveQuestion'}} class="btn btn-primary btn-block">Submit Question</button>
+    {{#if question}}
+      <button {{action 'updateQuestion' question}} class="btn btn-primary btn-block">Update Question</button>
+    {{else}}
+      <button {{action 'saveQuestion'}} class="btn btn-primary btn-block">Submit Question</button>
+    {{/if}}
   </div>
 </div>
