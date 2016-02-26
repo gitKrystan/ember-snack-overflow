@@ -1,28 +1,35 @@
-<!-- AUTHOR -->
-<div class="form-group">
-  <label for="author" class="col-sm-2 control-label">Author*</label>
-  <div class="col-sm-10">
-    {{input value=author class="form-control" placeholder="Your Name"}}
-    {{#if warnNeedsAuthor}}
-      <span id="helpBlock" class="help-block">Please add author name.</span>
-    {{/if}}
+{{#if answerFormIsVisible}}
+  <!-- AUTHOR -->
+  <div class="form-group">
+    <label for="author" class="col-sm-2 control-label">Author*</label>
+    <div class="col-sm-10">
+      {{input value=author class="form-control" placeholder="Your Name"}}
+      {{#if warnNeedsAuthor}}
+        <span id="helpBlock" class="help-block">Please add author name.</span>
+      {{/if}}
+    </div>
   </div>
-</div>
 
-<!-- CONTENT -->
-<div class="form-group">
-  <label for="content" class="col-sm-2 control-label">Answer*</label>
-  <div class="col-sm-10">
-    {{textarea value=content rows="6" class="form-control" placeholder="Your answer here..."}}
-    {{#if warnNeedsContent}}
-      <span id="helpBlock" class="help-block">Please add an answer.</span>
-    {{/if}}
+  <!-- CONTENT -->
+  <div class="form-group">
+    <label for="content" class="col-sm-2 control-label">Answer*</label>
+    <div class="col-sm-10">
+      {{textarea value=content rows="6" class="form-control" placeholder="Your answer here..."}}
+      {{#if warnNeedsContent}}
+        <span id="helpBlock" class="help-block">Please add an answer.</span>
+      {{/if}}
+    </div>
   </div>
-</div>
 
-<!-- SUBMIT BUTTON -->
-<div class="form-group">
-  <div class="col-sm-10 col-sm-offset-2">
-    <button {{action 'saveAnswer'}} class="btn btn-primary btn-block">Submit Answer</button>
+  <!-- SUBMIT/CANCEL BUTTONS -->
+  <div class="form-group">
+    <div class="col-sm-2">
+      <button {{action 'hideAnswerForm'}} class="btn btn-default">Nevermind</button>
+    </div>
+    <div class="col-sm-10">
+      <button {{action 'saveAnswer'}} class="btn btn-primary btn-block">Submit Answer</button>
+    </div>
   </div>
-</div>
+{{else}}
+  <button {{action 'showAnswerForm'}} class="btn btn-default">Answer this Question</button>
+{{/if}}

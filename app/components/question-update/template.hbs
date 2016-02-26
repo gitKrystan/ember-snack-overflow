@@ -1,36 +1,43 @@
-<!-- AUTHOR -->
-<div class="form-group">
-  <label for="author" class="col-sm-2 control-label">Author*</label>
-  <div class="col-sm-10">
-    {{input value=question.author class="form-control" placeholder="Your Name"}}
-    {{#if warnNeedsAuthor}}
-      <span class="help-block">Please add author name.</span>
-    {{/if}}
+{{#if questionFormIsVisible}}
+  <!-- AUTHOR -->
+  <div class="form-group">
+    <label for="author" class="col-sm-2 control-label">Author*</label>
+    <div class="col-sm-10">
+      {{input value=question.author class="form-control" placeholder="Your Name"}}
+      {{#if warnNeedsAuthor}}
+        <span class="help-block">Please add author name.</span>
+      {{/if}}
+    </div>
   </div>
-</div>
 
-<!-- CONTENT -->
-<div class="form-group">
-  <label for="content" class="col-sm-2 control-label">Question*</label>
-  <div class="col-sm-10">
-    {{input value=question.content class="form-control" placeholder="Can you state your question briefly?"}}
-    {{#if warnNeedsContent}}
-      <span class="help-block">Please add a question.</span>
-    {{/if}}
+  <!-- CONTENT -->
+  <div class="form-group">
+    <label for="content" class="col-sm-2 control-label">Question*</label>
+    <div class="col-sm-10">
+      {{input value=question.content class="form-control" placeholder="Can you state your question briefly?"}}
+      {{#if warnNeedsContent}}
+        <span class="help-block">Please add a question.</span>
+      {{/if}}
+    </div>
   </div>
-</div>
 
-<!-- NOTES -->
-<div class="form-group">
-  <label for="notes" class="col-sm-2 control-label">Description</label>
-  <div class="col-sm-10">
-    {{textarea value=question.notes class="form-control" rows="6" placeholder="Describe your question in depth here..."}}
+  <!-- NOTES -->
+  <div class="form-group">
+    <label for="notes" class="col-sm-2 control-label">Description</label>
+    <div class="col-sm-10">
+      {{textarea value=question.notes class="form-control" rows="6" placeholder="Describe your question in depth here..."}}
+    </div>
   </div>
-</div>
 
-<!-- SUBMIT BUTTON -->
-<div class="form-group">
-  <div class="col-sm-10 col-sm-offset-2">
-    <button {{action 'updateQuestion' question}} class="btn btn-primary btn-block">Update Question</button>
+  <!-- SUBMIT/CANCEL BUTTONS -->
+  <div class="form-group">
+    <div class="col-sm-2">
+      <button {{action 'hideQuestionForm'}} class="btn btn-default">Nevermind</button>
+    </div>
+    <div class="col-sm-10">
+      <button {{action 'updateQuestion' question}} class="btn btn-primary btn-block">Save Update</button>
+    </div>
   </div>
-</div>
+{{else}}
+  <button {{action 'showQuestionForm'}} class="btn btn-default">Update Question</button>
+{{/if}}

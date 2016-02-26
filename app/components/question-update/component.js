@@ -2,11 +2,24 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'form',
-  classNames: ['form-horizontal'],
+  classNames: ['form-horizontal', 'so-form'],
+  questionFormIsVisible: false,
   warnNeedsAuthor: false,
   warnNeedsContent: false,
   stopSubmit: false,
+
+  hideQuestionForm() {
+    this.set('questionFormIsVisible', false);
+  },
+
   actions: {
+    showQuestionForm() {
+      this.set('questionFormIsVisible', true);
+    },
+    hideQuestionForm() {
+      this.hideQuestionForm();
+    },
+
     updateQuestion(question) {
       if (question.get('author') === '') {
         this.set('warnNeedsAuthor', true);
@@ -34,6 +47,7 @@ export default Ember.Component.extend({
         this.set('notes', '');
 
         this.sendAction('updateQuestion', params, question);
+        this.hideQuestionForm();
       }
     }
   }

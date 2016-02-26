@@ -3,10 +3,23 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'form',
   classNames: ['form-horizontal'],
+  questionFormIsVisible: false,
   warnNeedsAuthor: false,
   warnNeedsContent: false,
   stopSubmit: false,
+
+  hideQuestionForm() {
+    this.set('questionFormIsVisible', false);
+  },
+
   actions: {
+    showQuestionForm() {
+      this.set('questionFormIsVisible', true);
+    },
+    hideQuestionForm() {
+      this.hideQuestionForm();
+    },
+
     saveQuestion() {
       var inputAuthor = this.get('author');
       var inputContent = this.get('content');
@@ -37,6 +50,7 @@ export default Ember.Component.extend({
         this.set('notes', '');
 
         this.sendAction('saveQuestion', params);
+        this.hideQuestionForm();
       }
     }
   }
