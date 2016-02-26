@@ -1,7 +1,10 @@
-# Snack-overflow
+# Snack Overflow
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+#### Ember.js Exercise for Epicodus, 02.26.2016
+
+#### By Krystan Menne
+
+Snack Overflow is a question and answer message board where a user submits a question and other users can respond with answers. This is a sample website to demonstrate knowledge of Ember.js with Ember Data models, Firebase, and SASS.
 
 ## Prerequisites
 
@@ -15,7 +18,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/gitKrystan/ember-snack-overflow.git`
 * change into the new directory
 * `npm install`
 * `bower install`
@@ -39,10 +42,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
-
-Specify what it takes to deploy your app.
-
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
@@ -51,3 +50,8 @@ Specify what it takes to deploy your app.
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
+### License
+
+Copyright (c) 2016 Krystan Menne
+
+This software is licensed under the MIT license.
