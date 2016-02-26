@@ -30,7 +30,7 @@ export default Ember.Component.extend({
           notes: this.get('notes') || '',
           dateCreated: new Date().getTime()
         };
-        
+
         this.set('author', '');
         this.set('content', '');
         this.set('notes', '');
