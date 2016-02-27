@@ -6,7 +6,7 @@ $gray: #cfd8dc;
 $brand-primary: #9b26af;
 $brand-danger: #f44336;
 $gray-base: #fff;
-$gray-darker: #212121;
+$gray-darker: #000;
 $gray-dark: #616161;
 $gray: #bdbdbd;
 $gray-light: #eee;
@@ -30,22 +30,43 @@ $navbar-default-border: $brand-primary;
 
 // Forms
 $input-border-focus: $green-accent;
+$input-color: $black;
 
 // Fonts
 $font-family-sans-serif: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // IMPORTS
 @import 'bootstrap';
-@import url(https://fonts.googleapis.com/css?family=Codystar|Roboto:400,700);
+@import url(https://fonts.googleapis.com/css?family=Codystar|Roboto:300,400,700);
+
+a:hover {
+  text-decoration: none;
+}
+
+.so-question-content {
+  margin: 10px 20px;
+  font-weight: 300;
+  font-size: 20px;
+}
 
 .so-tile {
   margin-top: $padding-large-vertical;
   background-color: $white;
-  padding: $padding-large-vertical;
+  padding: $padding-large-vertical $padding-large-horizontal;
   color: $black;
 
   .col-sm-10 {
     padding-top: 7px;
+  }
+}
+
+.so-tile-list {
+  .so-tile {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16),0 0 2px 0 rgba(0,0,0,.12);
+  }
+
+  .so-tile:hover {
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.16),0 0 2px 0 rgba(0,0,0,.12);
   }
 }
 
@@ -57,4 +78,14 @@ $font-family-sans-serif: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-seri
 .navbar-brand {
   font-family: 'Codystar', Helvetica, Arial, sans-serif;
   font-size: 50px;
+}
+
+form {
+  color: $black;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    color: $white;
+    background-color: $green-accent;
+    border-color: $green-accent; /*set the color you want here*/
 }

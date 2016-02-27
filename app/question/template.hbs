@@ -1,9 +1,13 @@
-{{question-tile question=model}}
+{{question-tile question=model showDescription=true}}
 
 {{question-update question=model updateQuestion='updateQuestion' deleteQuestion='deleteQuestion'}}
+
+<hr>
 
 {{answer-form question=model saveAnswer='saveAnswer'}}
 
 {{#each model.answers as |answer|}}
-  {{answer-tile answer=answer}}
+  <div class="so-tile-list">
+    {{answer-tile answer=answer}}
+  </div>
 {{/each}}

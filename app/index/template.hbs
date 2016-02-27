@@ -1,8 +1,9 @@
-
 {{question-form saveQuestion='saveQuestion'}}
 
 {{#each model as |question|}}
   {{#link-to 'question' question.id}}
-    {{question-tile question=question}}
+    <div class="so-tile-list">
+      {{question-tile question=question}}
+    </div>
   {{/link-to}}
 {{/each}}
