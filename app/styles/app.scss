@@ -1,14 +1,60 @@
 // VARIABLE OVERRIDES
+// Color
+$white: #fff;
+$black: #000;
+$gray: #cfd8dc;
+$brand-primary: #9b26af;
+$brand-danger: #f44336;
+$gray-base: #fff;
+$gray-darker: #212121;
+$gray-dark: #616161;
+$gray: #bdbdbd;
+$gray-light: #eee;
+$gray-lighter: #fafafa;
+$green-accent: #68efad;
 
+// Border
+$border-radius-base: 0;
+$border-radius-large: 0;
+$border-radius-small: 0;
+
+// Navbar
+$navbar-default-brand-color: $white;
+$navbar-default-color: $white;
+$navbar-default-link-color: $white;
+$navbar-default-link-hover-color: $white;
+$navbar-default-link-active-color: $white;
+$navbar-default-brand-hover-color: $white;
+$navbar-default-bg: $brand-primary;
+$navbar-default-border: $brand-primary;
+
+// Forms
+$input-border-focus: $green-accent;
+
+// Fonts
+$font-family-sans-serif: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // IMPORTS
 @import 'bootstrap';
+@import url(https://fonts.googleapis.com/css?family=Codystar|Roboto:400,700);
 
-.so-tile .col-sm-10 {
-  padding-top: 7px;
+.so-tile {
+  margin-top: $padding-large-vertical;
+  background-color: $white;
+  padding: $padding-large-vertical;
+  color: $black;
+
+  .col-sm-10 {
+    padding-top: 7px;
+  }
 }
 
 .so-show-button {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.navbar-brand {
+  font-family: 'Codystar', Helvetica, Arial, sans-serif;
+  font-size: 50px;
 }
